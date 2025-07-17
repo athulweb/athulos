@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ATHULOS AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <div class="container">
+    <img src="assets/logo.png" alt="ATHULOS AI" class="avatar" />
+    <h1>⚡ ATHULOS</h1>
+    
+    <form id="askForm">
+      <input type="text" id="askInput" placeholder="Ask anything..." autocomplete="off" />
+      <button type="submit">➤</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("askForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const query = document.getElementById("askInput").value.trim();
+      if (query !== "") {
+        window.location.href = `main.html?q=${encodeURIComponent(query)}`;
+      }
+    });
+  </script>
+</body>
+</html>
